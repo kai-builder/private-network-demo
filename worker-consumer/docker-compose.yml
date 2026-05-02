@@ -2,7 +2,6 @@ services:
   worker:
     build:
       context: .
-    image: private-network-demo-worker-consumer:latest
     environment:
       APP_NAME: worker-consumer
       PORT: 3000
