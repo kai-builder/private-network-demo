@@ -1,0 +1,13 @@
+services:
+  worker:
+    build:
+      context: .
+    image: private-network-demo-worker-consumer:latest
+    environment:
+      APP_NAME: worker-consumer
+      PORT: 3000
+      CACHE_URL: ${CACHE_URL:-redis://localhost:6379}
+      REQUEST_TIMEOUT_MS: ${REQUEST_TIMEOUT_MS:-2500}
+    ports:
+      - "${WORKER_PUBLIC_PORT:-18082}:3000"
+    restart: unless-stopped
