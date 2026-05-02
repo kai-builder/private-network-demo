@@ -10,7 +10,7 @@ This repo contains four **separate app stacks**. Deploy each folder as its own A
 |---|---|---|---|
 | `redis-producer` | Producer | `redis` | `6379` |
 | `postgres-producer` | Producer | `postgres` | `5432` |
-| `node-consumer-api` | Consumer | `app` | `18081` |
+| `node-consumer-api` | Consumer + UI | `app` | `18081` |
 | `worker-consumer` | Consumer | `worker` | `18082` |
 
 ## Why this repo exists
@@ -41,6 +41,14 @@ Recommended deploy order:
 
 Keep defaults on first deploy.
 If consumers are deployed first, that is still valid, but dependency checks will fail until links are configured.
+
+`node-consumer-api` now includes a frontend demo UI at `/`:
+
+- add/update Redis record
+- load Redis record by key
+- delete key
+- bulk-load demo records
+- list records by pattern
 
 Sample env files are included:
 
