@@ -32,7 +32,15 @@ Create four Apps from these folders:
 3. `node-consumer-api/docker-compose.yml`
 4. `worker-consumer/docker-compose.yml`
 
+Recommended deploy order:
+
+1. `redis-producer` (producer)
+2. `postgres-producer` (producer)
+3. `node-consumer-api` (consumer)
+4. `worker-consumer` (consumer)
+
 Keep defaults on first deploy.
+If consumers are deployed first, that is still valid, but dependency checks will fail until links are configured.
 
 Sample env files are included:
 
